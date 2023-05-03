@@ -9,3 +9,6 @@ S-2:
     - Serverless fundtion - call function start server-> execute with new server -> shut down.
 
 3. Why next.js popular.
+
+S-3:
+
