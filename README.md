@@ -7,4 +7,5 @@ S-2:
     - File based routing 
     - SEO - make your page top of other by doing proper formatting of page/code.
     - Serverless fundtion - call function start server-> execute with new server -> shut down.
-3. 
+
+3. Why next.js popular.
