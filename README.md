@@ -12,3 +12,11 @@ S-2:
 
 S-3:
 
+1. Create new project discover coffee store, and run dev server also see how it is llok like in browser.
+2. upgrade version of next and lib & fix issue.
+3. feature of next.js 
+    - 
+4. Fast refresh
+5. CSS modules work based on scope on same name class
+6. Background update and text color.
+7. Banner component.
