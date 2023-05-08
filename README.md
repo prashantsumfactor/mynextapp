@@ -26,4 +26,8 @@ S-4:
 1. Routing in next
 2. Add routRoutinger
 3. Dynamic routing with custom ID
-4. Linking non-dynamic & dynamic
+4. Linking non-dynamic
+    - By <a> with referesh page, also for external links
+    - By <Link> without refresh page, linking within application
+5. Linking dynamic
+    - By <Link> mention path
