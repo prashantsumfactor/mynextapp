@@ -1,4 +1,4 @@
-S-2:
+Section-2:
 
 1. What is next js - Next.js is a flexible React framework that gives you building blocks to create fast web applications.
 2. Benefite of next js -
@@ -10,7 +10,7 @@ S-2:
 
 3. Why next.js popular.
 
-S-3:
+Section-3:
     -
 
 1. Create new project discover coffee store, and run dev server also see how it is llok like in browser.
@@ -21,7 +21,7 @@ S-3:
 6. Background update and text color.
 7. Banner component.
 
-S-4:
+Section-4:
 
 1. Routing in next
 2. Add routRoutinger
@@ -31,3 +31,7 @@ S-4:
     - By <Link> without refresh page, linking within application
 5. Linking dynamic
     - By <Link> mention path
+
+Section-5:
+
+
