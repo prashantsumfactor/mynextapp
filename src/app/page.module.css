@@ -1,3 +1,18 @@
+.container {
+  color: firebrick;
+}
+
+.main {
+  margin-top: 2.5rem /* 40px */;
+  margin-left: auto;
+  color: firebrick;
+  margin-right: auto;
+  max-width: 72rem /* 1152px */;
+  padding-left: 1rem /* 16px */;
+  padding-right: 1rem /* 16px */;
+}
+
+/* 
 .main {
   display: flex;
   flex-direction: column;
@@ -5,7 +20,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-}
+} */
 
 .description {
   display: inherit;
