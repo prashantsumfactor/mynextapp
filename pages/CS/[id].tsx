@@ -8,6 +8,6 @@ const Coffee = () => {
         <Link href="/"> back to parent </Link>
         <Link href="/CS/dynamic"> Move to next</Link>
     </div>;
-}
+};
 
 export default Coffee;
