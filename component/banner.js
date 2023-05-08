@@ -1,6 +1,6 @@
 import styles from "./banner.module.css";
 
-const Banner = () => {
+const Banner = (props) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
@@ -9,7 +9,9 @@ const Banner = () => {
       </h1>
       <p className={styles.subTitle}>Discover your local coffee stores!</p>
       <div className={styles.buttonWrapper}>
-        <button className={styles.button}>View Items</button>
+        <button className={styles.button} onClick={props.handleOnClick}>
+          {props.buttonText}
+        </button>
       </div>
     </div>
   );

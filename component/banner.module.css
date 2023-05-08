@@ -1,5 +1,5 @@
 .container {
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
     position: relative;
     z-index: 20;
   }
@@ -19,7 +19,7 @@
   
   .title2 {
     display: block;
-    color: var(--text-purple);
+    color: rgba(67, 56, 202, 1);
   }
   
   .subTitle {

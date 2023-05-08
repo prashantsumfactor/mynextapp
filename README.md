@@ -11,11 +11,11 @@ S-2:
 3. Why next.js popular.
 
 S-3:
+    -
 
 1. Create new project discover coffee store, and run dev server also see how it is llok like in browser.
 2. upgrade version of next and lib & fix issue.
 3. feature of next.js 
-    - 
 4. Fast refresh
 5. CSS modules work based on scope on same name class
 6. Background update and text color.
@@ -24,5 +24,6 @@ S-3:
 S-4:
 
 1. Routing in next
-2. Add router , dynamic routing.
-3. 
+2. Add routRoutinger
+3. Dynamic routing with custom ID
+4. Linking non-dynamic & dynamic
