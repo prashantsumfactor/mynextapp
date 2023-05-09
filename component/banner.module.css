@@ -34,12 +34,12 @@
   }
   
   .button {
-    background-color: var(--text-purple-dark);
+    background-color: rgba(79, 70, 229, 1);
     cursor: pointer;
     color: white;
     outline: 0;
     border: 0px;
-  
+    font-weight: 700;
     padding-top: 1rem /* 16px */;
     padding-bottom: 1rem /* 16px */;
     font-size: 1.125rem /* 18px */;
@@ -47,7 +47,7 @@
     padding-left: 2.5rem /* 40px */;
     padding-right: 2.5rem /* 40px */;
   }
-  
-  .button:hover {
-    background-color: var(--text-purple-dark);
+
+  .button:focus {
+    outline: 5px auto -webkit-focus-ring-color;
   }

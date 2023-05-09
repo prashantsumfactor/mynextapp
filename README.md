@@ -34,4 +34,7 @@ Section-4:
 
 Section-5:
 
+1. Home page update style.
+2. Hero image
+
 
