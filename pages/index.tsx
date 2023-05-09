@@ -1,6 +1,7 @@
 import styles from '../styles/index.module.css';
 import Banner from '../component/banner';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const handleOnBannerBtnClick = () => {
     console.log('Button click event');
@@ -23,6 +24,15 @@ export default function Home() {
                     buttonText={false ? "Locating..." : "View stores nearby"}
                     handleOnClick={handleOnBannerBtnClick}
                 />
+
+              <div className={styles.heroImage}>
+              <Image
+                    src="/hero-image.png"
+                    alt="hero image"
+                    height={400}
+                    width={700}
+                />
+              </div>
             </main>
         </div>
     );
