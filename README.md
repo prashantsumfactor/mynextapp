@@ -11,8 +11,7 @@ Section-2:
 3. Why next.js popular.
 
 Section-3:
-    -
-
+    
 1. Create new project discover coffee store, and run dev server also see how it is llok like in browser.
 2. upgrade version of next and lib & fix issue.
 3. feature of next.js 
@@ -27,10 +26,10 @@ Section-4:
 2. Add routRoutinger
 3. Dynamic routing with custom ID
 4. Linking non-dynamic
-    - By <a> with referesh page, also for external links
-    - By <Link> without refresh page, linking within application
+    - By 'a' with referesh page, also for external links
+    - By 'Link' without refresh page, linking within application
 5. Linking dynamic
-    - By <Link> mention path
+    - By 'Link' mention path
 
 Section-5:
 
@@ -40,6 +39,6 @@ Section-5:
 4. Font download and apply
 5. Create document file
     - Html have 2 part - head & body
-    - _app.js is responsible for only <body>, and routing for all page
-    - <html>, <head> can be done by _document.js [ entire application]
+    - _app.js is responsible for only 'body', and routing for all page
+    - 'html', 'head' can be done by _document.js [ entire application]
 
