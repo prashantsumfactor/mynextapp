@@ -45,4 +45,10 @@ Section-5:
 Section-6:
 
 1. SEO
-2. 
+2. Pre-rendering, hydration
+3. Rendering techniques
+    - SSG : static generation
+    - ISR : incremental site regeneration
+    - SSR : server side renedering
+4. Performance
+5. CDN - content delivery network
