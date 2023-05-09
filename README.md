@@ -34,4 +34,12 @@ Section-4:
 
 Section-5:
 
+1. Home page update style.
+2. Hero image on home
+3. image component
+4. Font download and apply
+5. Create document file
+    - Html have 2 part - head & body
+    - _app.js is responsible for only <body>, and routing for all page
+    - <html>, <head> can be done by _document.js [ entire application]
 
