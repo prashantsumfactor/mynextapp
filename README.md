@@ -52,3 +52,5 @@ Section-6:
     - SSR : server side renedering
 4. Performance
 5. CDN - content delivery network
+6. SSG
+7. ISG
