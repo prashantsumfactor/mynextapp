@@ -57,3 +57,7 @@ Section-6:
 7. ISG - reload data after every time period & generate HTML
 8. SSR - server side rendering . new HTML generate every time
 9. CSR - all operation handle on client side. rendering pages directly in the browser using JavaScript
+
+Section-7:
+
+1. 

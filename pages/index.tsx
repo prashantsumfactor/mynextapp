@@ -1,5 +1,6 @@
 import styles from '../styles/index.module.css';
 import Banner from '../component/banner';
+import Card from '../component/card';
 import Head from 'next/head';
 import Image from 'next/image';
 
@@ -24,6 +25,8 @@ export default function Home() {
                     buttonText={false ? "Locating..." : "View stores nearby"}
                     handleOnClick={handleOnBannerBtnClick}
                 />
+                 <Card name="DarkHouse-coffee" href="/"/>
+            
 
               <div className={styles.heroImage}>
               <Image
