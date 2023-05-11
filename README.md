@@ -42,3 +42,15 @@ Section-5:
     - _app.js is responsible for only 'body', and routing for all page
     - 'html', 'head' can be done by _document.js [ entire application]
 
+Section-6:
+
+1. SEO
+2. Pre-rendering, hydration
+3. Rendering techniques
+    - SSG : static generation
+    - ISR : incremental site regeneration
+    - SSR : server side renedering
+4. Performance
+5. CDN - content delivery network
+6. SSG
+7. ISG
