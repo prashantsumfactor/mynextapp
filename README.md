@@ -60,4 +60,6 @@ Section-6:
 
 Section-7:
 
-1. 
+1. component arch
+2. Card component
+3. 

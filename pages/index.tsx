@@ -25,8 +25,7 @@ export default function Home() {
                     buttonText={false ? "Locating..." : "View stores nearby"}
                     handleOnClick={handleOnBannerBtnClick}
                 />
-                 <Card name="DarkHouse-coffee" href="/"/>
-            
+                
 
               <div className={styles.heroImage}>
               <Image
@@ -36,6 +35,9 @@ export default function Home() {
                     width={700}
                 />
               </div>
+
+              <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee"/>
+            
             </main>
         </div>
     );
