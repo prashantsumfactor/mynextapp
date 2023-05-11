@@ -62,4 +62,5 @@ Section-7:
 
 1. component arch
 2. Card component
-3. 
+3. apply card style
+4. 
