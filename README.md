@@ -66,7 +66,12 @@ Section-7:
 4. grid layout for card
 5. add coffee store data [ json ]
 6. add coffee store on page
-7. pre-render in coffee store page
+7. pre-render in coffee store page getStaticProps
 8. implement Static site generation - with external data
 9. Characteristics of Get Static Props
-10. 
+10. coffee store heading
+11. getStaticPaths implement
+12. Characteristics of Get Static Paths
+13. getStaticPaths in code
+14. fallback key
+15. show coffee data in dynamic page

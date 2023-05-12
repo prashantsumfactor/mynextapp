@@ -3,7 +3,7 @@ import Banner from '../component/banner';
 import Card from '../component/card';
 import Head from 'next/head';
 import Image from 'next/image';
-import coffeeStores from '../data/coffee-stores.json';
+import coffeeStoresData from '../data/coffee-stores.json';
 
 const handleOnBannerBtnClick = () => {
     console.log('Button click event');
@@ -11,7 +11,7 @@ const handleOnBannerBtnClick = () => {
 
 export async function getStaticProps(context) {
     return {
-        props: { coffeeStores },
+        props: { coffeeStores : coffeeStoresData, },
     }
 }
 
@@ -43,18 +43,24 @@ export default function Home(props) {
                         width={700}
                     />
                 </div>
-                <div className={styles.cardLayout}>
-                    {props.coffeeStores.map((coffeeStore) => {
-                        return (
-                            <Card
-                                key={coffeeStore.id}
-                                name={coffeeStore.name}
-                                imgUrl={coffeeStore.imgUrl}
-                                href={`/CS/${coffeeStore.id}`}
-                                className={styles.card} />
-                        );
-                    })}
-                </div>
+
+                {props.coffeeStores.length > 0 &&
+                    <>
+                        <h2 className={styles.heading2}>Toronto stores</h2>
+                        <div className={styles.cardLayout}>
+                            {props.coffeeStores.map((coffeeStore) => {
+                                return (
+                                    <Card
+                                        key={coffeeStore.id}
+                                        name={coffeeStore.name}
+                                        imgUrl={coffeeStore.imgUrl}
+                                        href={`/CS/${coffeeStore.id}`}
+                                        className={styles.card} />
+                                );
+                            })}
+                        </div>
+                    </>
+                }
             </main>
         </div>
     );
