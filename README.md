@@ -64,3 +64,9 @@ Section-7:
 2. Card component
 3. apply card style
 4. grid layout for card
+5. add coffee store data [ json ]
+6. add coffee store on page
+7. pre-render in coffee store page
+8. implement Static site generation - with external data
+9. Characteristics of Get Static Props
+10. 

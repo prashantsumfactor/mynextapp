@@ -3,12 +3,20 @@ import Banner from '../component/banner';
 import Card from '../component/card';
 import Head from 'next/head';
 import Image from 'next/image';
+import coffeeStores from '../data/coffee-stores.json';
 
 const handleOnBannerBtnClick = () => {
     console.log('Button click event');
 }
 
-export default function Home() {
+export async function getStaticProps(context) {
+    return {
+        props: { coffeeStores },
+    }
+}
+
+export default function Home(props) {
+    console.log("props", props);
     return (
         <div className={styles.container}>
             <Head>
@@ -36,12 +44,17 @@ export default function Home() {
                     />
                 </div>
                 <div className={styles.cardLayout}>
-                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
-                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
-                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
-                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
+                    {props.coffeeStores.map((coffeeStore) => {
+                        return (
+                            <Card
+                                key={coffeeStore.id}
+                                name={coffeeStore.name}
+                                imgUrl={coffeeStore.imgUrl}
+                                href={`/CS/${coffeeStore.id}`}
+                                className={styles.card} />
+                        );
+                    })}
                 </div>
-
             </main>
         </div>
     );
