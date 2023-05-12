@@ -1,10 +1,7 @@
-
-import next from "next/types";
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './card.module.css';
 import cls from 'classname';
-
 
 const Card = (props) => {
     return (

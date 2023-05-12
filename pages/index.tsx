@@ -25,19 +25,23 @@ export default function Home() {
                     buttonText={false ? "Locating..." : "View stores nearby"}
                     handleOnClick={handleOnBannerBtnClick}
                 />
-                
 
-              <div className={styles.heroImage}>
-              <Image
-                    src="/hero-image.png"
-                    alt="hero image"
-                    height={400}
-                    width={700}
-                />
-              </div>
 
-              <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee"/>
-            
+                <div className={styles.heroImage}>
+                    <Image
+                        src="/hero-image.png"
+                        alt="hero image"
+                        height={400}
+                        width={700}
+                    />
+                </div>
+                <div className={styles.cardLayout}>
+                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
+                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
+                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
+                    <Card name="DarkHouse-coffee" imgUrl="/hero-image.png" href="/CS/darkhorse-coffee" className={styles.card} />
+                </div>
+
             </main>
         </div>
     );
