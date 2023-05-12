@@ -75,3 +75,7 @@ Section-7:
 13. getStaticPaths in code
 14. fallback key
 15. show coffee data in dynamic page
+16. fallback true and false cases
+17. refactor page
+18. Coffee store details page
+19. 
