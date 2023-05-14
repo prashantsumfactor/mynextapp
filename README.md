@@ -80,3 +80,6 @@ Section-7:
 18. Coffee store details page
 19. add icon and image
 20. Coffee store page styling
+21. Foursquare account set-up and ket generate
+22. Foursquare place api
+23. rate limit
