@@ -76,6 +76,7 @@ Section-7:
 14. fallback key
 15. show coffee data in dynamic page
 16. fallback true and false cases
-17. refactor page
+17. refactor page update name of dynamic page
 18. Coffee store details page
-19. 
+19. add icon and image
+20. Coffee store page styling
