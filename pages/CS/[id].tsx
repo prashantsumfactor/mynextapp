@@ -7,8 +7,8 @@ import coffeeStoresData from '../../data/coffee-stores.json';
 import styles from '../../styles/coffee-store.module.css';
 
 
-
 export function getStaticProps(staticProps) {
+
     const params = staticProps.params;
     return {
         props: {

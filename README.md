@@ -83,3 +83,7 @@ Section-7:
 21. Foursquare account set-up and ket generate
 22. Foursquare place api
 23. rate limit
+24. Foursquare API playground
+25. Foursquare get static paths
+26. Fetch API async await
+27. 
