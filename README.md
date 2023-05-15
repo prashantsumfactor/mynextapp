@@ -86,4 +86,6 @@ Section-7:
 24. Foursquare API playground
 25. Foursquare get static paths
 26. Fetch API async await
-27. 
+27. Env local variable vs next.config
+28. coffee store lib
+29. 

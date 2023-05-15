@@ -3,31 +3,16 @@ import Banner from '../component/banner';
 import Card from '../component/card';
 import Head from 'next/head';
 import Image from 'next/image';
-import coffeeStoresData from '../data/coffee-stores.json';
-
-// Foursquare key : fsq32AWsFe3xYJbLJemwMxNS7RD9dSRsB6FAO+3bxQ37VQE=
+import {fetchCoffeeStore} from '../lib/coffee-stores'
 
 const handleOnBannerBtnClick = () => {
     console.log('Button click event');
 }
 
 export async function getStaticProps(context) {
-
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'fsq32AWsFe3xYJbLJemwMxNS7RD9dSRsB6FAO+3bxQ37VQE='
-        }
-      };
-      
-    const response = await fetch('https://api.foursquare.com/v3/places/search?query=coffee-store&ll=43.653833032607096%2C-79.37896808855945&limit=6', options);
-    const data = await response.json();
-
-    console.log("data_res",data.results);
-
+    const coffeeStores = await fetchCoffeeStore();
     return {
-        props: { coffeeStores : data.results, },
+        props: { coffeeStores },
     }
 }
 
