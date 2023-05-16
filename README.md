@@ -98,3 +98,7 @@ Section-7:
 36. display all coffee store card image
 37. update each card with different image
 38. update app styling
+
+Section-8 :
+
+1.  
