@@ -3,11 +3,8 @@ import Banner from '../component/banner';
 import Card from '../component/card';
 import Head from 'next/head';
 import Image from 'next/image';
-import {fetchCoffeeStore} from '../lib/coffee-stores'
-
-const handleOnBannerBtnClick = () => {
-    console.log('Button click event');
-}
+import { fetchCoffeeStore } from '../lib/coffee-stores'
+import useTrackLocartion from '../hooks/use-track-location'
 
 export async function getStaticProps(context) {
     const coffeeStores = await fetchCoffeeStore();
@@ -17,7 +14,20 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
-    console.log("props", props);
+    //console.log("props", props);
+    // const { useEffect, useState, useContext } = React;
+
+    const { handleTrackLocation, latLong, locationErrorMsg, isFindingLocation } = useTrackLocartion();
+
+    console.log('latlong', latLong);
+    console.log('latlong', locationErrorMsg);
+
+
+    const handleOnBannerBtnClick = () => {
+        console.log('Hi, Button click event');
+        handleTrackLocation();
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -31,10 +41,10 @@ export default function Home(props) {
 
             <main className={styles.main}>
                 <Banner
-                    buttonText={false ? "Locating..." : "View stores nearby"}
+                    buttonText={isFindingLocation ? "Locating..." : "View stores nearby"}
                     handleOnClick={handleOnBannerBtnClick}
                 />
-
+                {locationErrorMsg && <p>Something went wrong : {locationErrorMsg}</p>}
 
                 <div className={styles.heroImage}>
                     <Image
@@ -46,7 +56,7 @@ export default function Home(props) {
                 </div>
 
                 {props.coffeeStores.length > 0 &&
-                    <>
+                    <div className={styles.sectionWrapper}>
                         <h2 className={styles.heading2}>Toronto stores</h2>
                         <div className={styles.cardLayout}>
                             {props.coffeeStores.map((coffeeStore) => {
@@ -60,10 +70,9 @@ export default function Home(props) {
                                 );
                             })}
                         </div>
-                    </>
+                    </div>
                 }
             </main>
         </div>
     );
 }
-

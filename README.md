@@ -101,4 +101,9 @@ Section-7:
 
 Section-8 :
 
-1.  
+1. Geolocation api
+2. using react hook
+3. creat hook for retrieving location
+4. use hook for getting location
+5. use effect in function
+6. 
