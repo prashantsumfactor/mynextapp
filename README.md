@@ -91,3 +91,10 @@ Section-7:
 29. Update foursquare api in getStaticPaths
 30. update coffee store details data
 31. set-up unsplash API
+32. invoke unsplash api p-1
+33. invoke unsplash api p-2
+34. update coffee-store library with images
+35. unsplash api per page -30
+36. display all coffee store card image
+37. update each card with different image
+38. 
