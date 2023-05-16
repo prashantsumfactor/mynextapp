@@ -88,4 +88,6 @@ Section-7:
 26. Fetch API async await
 27. Env local variable vs next.config
 28. coffee store lib
-29. 
+29. Update foursquare api in getStaticPaths
+30. update coffee store details data
+31. set-up unsplash API
