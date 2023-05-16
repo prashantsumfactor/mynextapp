@@ -97,4 +97,4 @@ Section-7:
 35. unsplash api per page -30
 36. display all coffee store card image
 37. update each card with different image
-38. 
+38. update app styling
