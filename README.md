@@ -57,3 +57,44 @@ Section-6:
 7. ISG - reload data after every time period & generate HTML
 8. SSR - server side rendering . new HTML generate every time
 9. CSR - all operation handle on client side. rendering pages directly in the browser using JavaScript
+
+Section-7:
+
+1. component arch
+2. Card component
+3. apply card style
+4. grid layout for card
+5. add coffee store data [ json ]
+6. add coffee store on page
+7. pre-render in coffee store page getStaticProps
+8. implement Static site generation - with external data
+9. Characteristics of Get Static Props
+10. coffee store heading
+11. getStaticPaths implement
+12. Characteristics of Get Static Paths
+13. getStaticPaths in code
+14. fallback key
+15. show coffee data in dynamic page
+16. fallback true and false cases
+17. refactor page update name of dynamic page
+18. Coffee store details page
+19. add icon and image
+20. Coffee store page styling
+21. Foursquare account set-up and ket generate
+22. Foursquare place api
+23. rate limit
+24. Foursquare API playground
+25. Foursquare get static paths
+26. Fetch API async await
+27. Env local variable vs next.config
+28. coffee store lib
+29. Update foursquare api in getStaticPaths
+30. update coffee store details data
+31. set-up unsplash API
+32. invoke unsplash api p-1
+33. invoke unsplash api p-2
+34. update coffee-store library with images
+35. unsplash api per page -30
+36. display all coffee store card image
+37. update each card with different image
+38. update app styling
