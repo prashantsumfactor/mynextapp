@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { fetchCoffeeStore } from '../lib/coffee-stores'
 import useTrackLocartion from '../hooks/use-track-location'
+import { useEffect, useState } from 'react';
 
 export async function getStaticProps(context) {
     const coffeeStores = await fetchCoffeeStore();
@@ -19,9 +20,41 @@ export default function Home(props) {
 
     const { handleTrackLocation, latLong, locationErrorMsg, isFindingLocation } = useTrackLocartion();
 
-    console.log('latlong', latLong);
-    console.log('latlong', locationErrorMsg);
+    const [coffeeStores, setCoffeeStores ] = useState('');
+    const [coffeeStoresError, setCoffeeStoresError ] = useState(null);
 
+    //console.log('latlong', latLong);
+    //console.log('latlong', locationErrorMsg);
+
+    useEffect(() => {
+        async function fetchData() {
+            if (latLong) {
+                try {
+                    const getCoffeeStore = await fetchCoffeeStore(latLong, 30);
+                    console.log({ getCoffeeStore });
+                    setCoffeeStores(getCoffeeStore);
+                }
+                catch (error) {
+                    console.log({error});
+                    setCoffeeStoresError(error.message);
+                }
+            }
+        }
+        fetchData();
+      }, [latLong]); 
+      
+    /*useEffect( async () => {
+            if (latLong) {
+                try {
+                    const getCoffeeStore = await fetchCoffeeStore(latLong, 30);
+                    console.log({ getCoffeeStore });
+                }
+                catch (error) {
+                    console.log({ error });
+                }
+            }
+      
+    },[latLong]);*/
 
     const handleOnBannerBtnClick = () => {
         console.log('Hi, Button click event');
@@ -45,6 +78,7 @@ export default function Home(props) {
                     handleOnClick={handleOnBannerBtnClick}
                 />
                 {locationErrorMsg && <p>Something went wrong : {locationErrorMsg}</p>}
+                {coffeeStoresError && <p>Something went wrong : {coffeeStoresError}</p>}
 
                 <div className={styles.heroImage}>
                     <Image
@@ -54,6 +88,24 @@ export default function Home(props) {
                         width={700}
                     />
                 </div>
+
+                { coffeeStores?.length > 0 &&
+                    <div className={styles.sectionWrapper}>
+                        <h2 className={styles.heading2}>Stores near me</h2>
+                        <div className={styles.cardLayout}>
+                            {coffeeStores.map((coffeeStoreItem) => {
+                                return (
+                                    <Card
+                                        key={coffeeStoreItem.id}
+                                        name={coffeeStoreItem.name}
+                                        imgUrl={coffeeStoreItem.imgUrl || "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"}
+                                        href={`/CS/${coffeeStoreItem.id}`}
+                                        className={styles.card} />
+                                );
+                            })}
+                        </div>
+                    </div>
+                }
 
                 {props.coffeeStores.length > 0 &&
                     <div className={styles.sectionWrapper}>
@@ -76,3 +128,10 @@ export default function Home(props) {
         </div>
     );
 }
+
+
+// v - s10,2 left
+// s - s9, 131 
+// a - s10, 4 left
+// aa- s10, 1 left
+// r - s9, 4 left

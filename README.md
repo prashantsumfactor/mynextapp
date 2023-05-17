@@ -106,4 +106,6 @@ Section-8 :
 3. creat hook for retrieving location
 4. use hook for getting location
 5. use effect in function
-6. 
+6. CSR, client side rendering
+7. display coffee store by location
+8. refresh dynamic route
