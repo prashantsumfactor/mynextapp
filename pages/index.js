@@ -5,7 +5,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { fetchCoffeeStore } from '../lib/coffee-stores'
 import useTrackLocartion from '../hooks/use-track-location'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { ACTION_TYPES, StoreContext } from '../pages/_app';
+
 
 export async function getStaticProps(context) {
     const coffeeStores = await fetchCoffeeStore();
@@ -18,31 +20,35 @@ export default function Home(props) {
     //console.log("props", props);
     // const { useEffect, useState, useContext } = React;
 
-    const { handleTrackLocation, latLong, locationErrorMsg, isFindingLocation } = useTrackLocartion();
+    const { handleTrackLocation, locationErrorMsg, isFindingLocation } = useTrackLocartion();
 
-    const [coffeeStores, setCoffeeStores ] = useState('');
-    const [coffeeStoresError, setCoffeeStoresError ] = useState(null);
-
-    //console.log('latlong', latLong);
-    //console.log('latlong', locationErrorMsg);
+    // const [coffeeStores, setCoffeeStores] = useState('');
+    const [coffeeStoresError, setCoffeeStoresError] = useState(null);
+    const { dispatch, state } = useContext(StoreContext);
+    const {coffeeStores, latLong} =state;
 
     useEffect(() => {
         async function fetchData() {
             if (latLong) {
                 try {
+                    console.log("latlongY",latLong);
                     const getCoffeeStore = await fetchCoffeeStore(latLong, 30);
                     console.log({ getCoffeeStore });
-                    setCoffeeStores(getCoffeeStore);
+                    // setCoffeeStores(getCoffeeStore); // no need now
+                    dispatch({
+                        type: ACTION_TYPES.SET_COFFEE_STORES,
+                        payload: { coffeeStores: getCoffeeStore, },
+                    });
                 }
                 catch (error) {
-                    console.log({error});
+                    console.log({ error });
                     setCoffeeStoresError(error.message);
                 }
             }
         }
         fetchData();
-      }, [latLong]); 
-      
+    }, [latLong]);
+
     /*useEffect( async () => {
             if (latLong) {
                 try {
@@ -89,7 +95,7 @@ export default function Home(props) {
                     />
                 </div>
 
-                { coffeeStores?.length > 0 &&
+                {coffeeStores?.length > 0 &&
                     <div className={styles.sectionWrapper}>
                         <h2 className={styles.heading2}>Stores near me</h2>
                         <div className={styles.cardLayout}>
@@ -130,8 +136,8 @@ export default function Home(props) {
 }
 
 
-// v - s10,2 left
-// s - s9, 131 
-// a - s10, 4 left
-// aa- s10, 1 left
-// r - s9, 4 left
+// v - s11 start
+// s - s9, 3 left
+// a - s11 strt
+// an- s10, 1 left
+// r - s10

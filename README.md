@@ -108,4 +108,10 @@ Section-8 :
 5. use effect in function
 6. CSR, client side rendering
 7. display coffee store by location
-8. refresh dynamic route
+8. refresh dynamic route (non static)
+9. fallback in next
+10. use react context and why use it
+11. create store context
+12. create store reducer in context
+13. store coffee stores in StoreContext
+14. coffee store page with context
