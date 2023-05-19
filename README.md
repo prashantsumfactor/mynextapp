@@ -115,3 +115,5 @@ Section-8 :
 12. create store reducer in context
 13. store coffee stores in StoreContext
 14. coffee store page with context
+15. coffee store page for non SSG route
+16. refactor coffee store page
