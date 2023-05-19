@@ -98,3 +98,22 @@ Section-7:
 36. display all coffee store card image
 37. update each card with different image
 38. update app styling
+
+Section-8 :
+
+1. Geolocation api
+2. using react hook
+3. creat hook for retrieving location
+4. use hook for getting location
+5. use effect in function
+6. CSR, client side rendering
+7. display coffee store by location
+8. refresh dynamic route (non static)
+9. fallback in next
+10. use react context and why use it
+11. create store context
+12. create store reducer in context
+13. store coffee stores in StoreContext
+14. coffee store page with context
+15. coffee store page for non SSG route
+16. refactor coffee store page

@@ -5,6 +5,10 @@ import Image from "next/image";
 import cls from "classnames";
 import styles from '../../styles/coffee-store.module.css';
 import { fetchCoffeeStore } from '../../lib/coffee-stores'
+import { useContext, useEffect, useState } from "react";
+import { StoreContext } from "../../store/store-context";
+import { isEmpty} from '../../utils/index';
+
 
 export async function getStaticProps(staticProps) {
 
@@ -12,11 +16,13 @@ export async function getStaticProps(staticProps) {
     const coffeeStores = await fetchCoffeeStore();
     console.log("param_id", params);
 
+    const findCoffeeStoreByID = coffeeStores.find(coffeeStore => {
+        return coffeeStore.id.toString() === params.id;
+    });
+
     return {
         props: {
-            coffeeStore: coffeeStores.find(coffeeStore => {
-                return coffeeStore.id.toString() === params.id;
-            }),
+            coffeeStore: findCoffeeStoreByID ? findCoffeeStoreByID : {},
         },
     };
 }
@@ -42,16 +48,31 @@ function handleUpvoteButton() {
 }
 
 
-const Coffee = (props) => {
+const Coffee = (initialProps) => {
     const router = useRouter();
-
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
+    const pageId = router.query.id;
 
-    const { name, address, neighbourhood, imgUrl } = props.coffeeStore;
+    const [getCoffeeStore, setCoffeeStores] = useState(initialProps.coffeeStore)
 
-    console.log("props", props);
+    const { state: { coffeeStores }
+    } = useContext(StoreContext);
+
+    useEffect(() => {
+        if (isEmpty(initialProps.coffeeStore)) {
+            if (coffeeStores.length > 0) {
+                const findCoffeeStoreByID = coffeeStores.find(coffeeStore => {
+                    return coffeeStore.id.toString() === pageId;
+                });
+                setCoffeeStores(findCoffeeStoreByID);
+            }
+        }
+    },[pageId]);
+
+    const { name, address, neighbourhood, imgUrl } = getCoffeeStore;
+    console.log("props", initialProps);
     return <div className={styles.layout}>
         <Head>
             <title>{name}</title>
