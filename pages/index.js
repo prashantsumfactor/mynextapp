@@ -6,8 +6,7 @@ import Image from 'next/image';
 import { fetchCoffeeStore } from '../lib/coffee-stores'
 import useTrackLocartion from '../hooks/use-track-location'
 import { useEffect, useState, useContext } from 'react';
-import { ACTION_TYPES, StoreContext } from '../pages/_app';
-
+import { ACTION_TYPES, StoreContext } from '../store/store-context';
 
 export async function getStaticProps(context) {
     const coffeeStores = await fetchCoffeeStore();
