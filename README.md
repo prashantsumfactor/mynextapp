@@ -122,4 +122,12 @@ Section-9 :
 
 1. what is API [Application programming interface]
 2. serverless function
-3. 
+3. api routing
+4. hello world api route
+5. create serverless function
+6. catch all routes
+    - if route exit with correct name it works [ pub.js ]
+    - if route not exit it will catch any route [ 123/sfds anything]
+7. create serverless function for coffee store
+8. invoke serverless function
+9. 
