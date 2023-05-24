@@ -117,3 +117,9 @@ Section-8 :
 14. coffee store page with context
 15. coffee store page for non SSG route
 16. refactor coffee store page
+
+Section-9 : 
+
+1. what is API [Application programming interface]
+2. serverless function
+3. 
