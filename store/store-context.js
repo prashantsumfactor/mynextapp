@@ -5,7 +5,7 @@ export const StoreContext = createContext();
 export const ACTION_TYPES = {
   SET_LAT_LONG: "SET_LAT_LONG",
   SET_COFFEE_STORES: "SET_COFFEE_STORES",
-}
+};
 
 const storeReducer = (state, action) => {
   switch (action.type) {
@@ -15,20 +15,22 @@ const storeReducer = (state, action) => {
     case ACTION_TYPES.SET_COFFEE_STORES: {
       return { ...state, coffeeStores: action.payload.coffeeStores };
     }
-    default: throw new Error(`Un-handle action type ${action.type}`);
+    default:
+      throw new Error(`Un-handle action type : ${action.type}`);
   }
-};
+}; 
 
-const StoreProvider = ({ children }) => {
+export const StoreProvider = ({ children }) => {
+
   const initialState = {
     latLong: "",
-    coffeeStore: [],
+    coffeeStores: [],
   };
 
   const [state, dispatch] = useReducer(storeReducer, initialState);
+
   return (
-  <StoreContext.Provider value={{ state, dispatch }}>{children}</StoreContext.Provider>
+    <StoreContext.Provider value={{ state, dispatch }}>
+      {children}</StoreContext.Provider>
   );
 }
-
-export default StoreProvider;
