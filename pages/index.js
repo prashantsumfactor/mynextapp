@@ -4,7 +4,7 @@ import Card from '../component/card';
 import Head from 'next/head';
 import Image from 'next/image';
 import { fetchCoffeeStore } from '../lib/coffee-stores'
-import useTrackLocartion from '../hooks/use-track-location'
+import useTrackLocation from '../hooks/use-track-location'
 import { useEffect, useState, useContext } from 'react';
 import { ACTION_TYPES, StoreContext } from '../store/store-context';
 
@@ -16,24 +16,19 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
-    //console.log("props", props);
-    // const { useEffect, useState, useContext } = React;
 
-    const { handleTrackLocation, locationErrorMsg, isFindingLocation } = useTrackLocartion();
-
-    // const [coffeeStores, setCoffeeStores] = useState('');
+    const { handleTrackLocation, locationErrorMsg, isFindingLocation } = useTrackLocation();
     const [coffeeStoresError, setCoffeeStoresError] = useState(null);
-    const { dispatch, state } = useContext(StoreContext);
-    const {coffeeStores, latLong} =state;
+    const { state, dispatch } = useContext(StoreContext);
+    const { coffeeStores, latLong } = state;
 
     useEffect(() => {
         async function fetchData() {
             if (latLong) {
                 try {
-                    console.log("latlongY",latLong);
+                    console.log("latlongY", latLong);
                     const getCoffeeStore = await fetchCoffeeStore(latLong, 30);
                     console.log({ getCoffeeStore });
-                    // setCoffeeStores(getCoffeeStore); // no need now
                     dispatch({
                         type: ACTION_TYPES.SET_COFFEE_STORES,
                         payload: { coffeeStores: getCoffeeStore, },
@@ -47,19 +42,6 @@ export default function Home(props) {
         }
         fetchData();
     }, [latLong]);
-
-    /*useEffect( async () => {
-            if (latLong) {
-                try {
-                    const getCoffeeStore = await fetchCoffeeStore(latLong, 30);
-                    console.log({ getCoffeeStore });
-                }
-                catch (error) {
-                    console.log({ error });
-                }
-            }
-      
-    },[latLong]);*/
 
     const handleOnBannerBtnClick = () => {
         console.log('Hi, Button click event');
@@ -133,10 +115,3 @@ export default function Home(props) {
         </div>
     );
 }
-
-
-// v - s11 start
-// s - s9, 3 left
-// a - s11 strt
-// an- s10, 1 left
-// r - s10

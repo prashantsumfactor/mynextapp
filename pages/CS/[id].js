@@ -7,8 +7,7 @@ import styles from '../../styles/coffee-store.module.css';
 import { fetchCoffeeStore } from '../../lib/coffee-stores'
 import { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../../store/store-context";
-import { isEmpty} from '../../utils/index';
-
+import { isEmpty } from '../../utils/index';
 
 export async function getStaticProps(staticProps) {
 
@@ -57,8 +56,7 @@ const Coffee = (initialProps) => {
 
     const [getCoffeeStore, setCoffeeStores] = useState(initialProps.coffeeStore)
 
-    const { state: { coffeeStores }
-    } = useContext(StoreContext);
+    const { state: { coffeeStores } } = useContext(StoreContext);
 
     useEffect(() => {
         if (isEmpty(initialProps.coffeeStore)) {
@@ -69,7 +67,7 @@ const Coffee = (initialProps) => {
                 setCoffeeStores(findCoffeeStoreByID);
             }
         }
-    },[pageId]);
+    }, [pageId]);
 
     const { name, address, neighbourhood, imgUrl } = getCoffeeStore;
     console.log("props", initialProps);
