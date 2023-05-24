@@ -136,3 +136,8 @@ Section-9 :
 Section-10 :
 
 1. Project Architecture
+2. Airtable
+3. set-up airtable
+4. API Architecture
+5. Airtable library
+6. 
