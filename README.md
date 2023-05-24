@@ -132,3 +132,7 @@ Section-9 :
 8. invoke serverless function
 9. serverless function inside get static props- 
     we will stay with getting data directly in get static props next doc suggest don't call api inside static props because it is run at build time or pre-rendering.
+
+Section-10 :
+
+1. Project Architecture
