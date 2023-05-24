@@ -117,3 +117,18 @@ Section-8 :
 14. coffee store page with context
 15. coffee store page for non SSG route
 16. refactor coffee store page
+
+Section-9 : 
+
+1. what is API [Application programming interface]
+2. serverless function
+3. api routing
+4. hello world api route
+5. create serverless function
+6. catch all routes
+    - if route exit with correct name it works [ pub.js ]
+    - if route not exit it will catch any route [ 123/sfds anything]
+7. create serverless function for coffee store
+8. invoke serverless function
+9. serverless function inside get static props- 
+    we will stay with getting data directly in get static props next doc suggest don't call api inside static props because it is run at build time or pre-rendering.
