@@ -130,4 +130,5 @@ Section-9 :
     - if route not exit it will catch any route [ 123/sfds anything]
 7. create serverless function for coffee store
 8. invoke serverless function
-9. 
+9. serverless function inside get static props- 
+    we will stay with getting data directly in get static props next doc suggest don't call api inside static props because it is run at build time or pre-rendering.
