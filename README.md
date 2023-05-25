@@ -132,3 +132,22 @@ Section-9 :
 8. invoke serverless function
 9. serverless function inside get static props- 
     we will stay with getting data directly in get static props next doc suggest don't call api inside static props because it is run at build time or pre-rendering.
+
+Section-10 :
+
+1. Project Architecture
+2. Airtable
+3. set-up airtable
+4. API Architecture
+5. Airtable library
+6. coffee store aPI / Serverless function
+7. API design
+8. Find coffee store api
+9. transfrom coffee store data
+10. airtable doc, create record
+11. api error handling
+12. refactor coffee-store api
+13. invoke airtable api in coffee store page
+14. Coffee Stores are created twice and React Strict Mode
+15. invoke coffee store api from details page
+16. create coffee store for static gengerated route
