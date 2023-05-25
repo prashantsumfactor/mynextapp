@@ -144,4 +144,10 @@ Section-10 :
 7. API design
 8. Find coffee store api
 9. transfrom coffee store data
-10. 
+10. airtable doc, create record
+11. api error handling
+12. refactor coffee-store api
+13. invoke airtable api in coffee store page
+14. Coffee Stores are created twice and React Strict Mode
+15. invoke coffee store api from details page
+16. create coffee store for static gengerated route
