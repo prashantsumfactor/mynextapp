@@ -140,4 +140,8 @@ Section-10 :
 3. set-up airtable
 4. API Architecture
 5. Airtable library
-6. 
+6. coffee store aPI / Serverless function
+7. API design
+8. Find coffee store api
+9. transfrom coffee store data
+10. 
