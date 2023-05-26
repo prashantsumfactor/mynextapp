@@ -151,3 +151,12 @@ Section-10 :
 14. Coffee Stores are created twice and React Strict Mode
 15. invoke coffee store api from details page
 16. create coffee store for static gengerated route
+
+Section-11 :
+
+1. SWR Design
+2. voting feature design
+3. coffee store by ID api
+4. coffee store by id validate
+5. refector coffee store by id api
+6. 
