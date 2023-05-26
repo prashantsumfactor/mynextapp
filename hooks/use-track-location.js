@@ -19,7 +19,6 @@ const useTrackLocation = () => {
         });
         setLocationErrorMsg('');
         setFindingLocation(false);
-        console.log(latitude, longitude);
     };
 
     const error = () => {

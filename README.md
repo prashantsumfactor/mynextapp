@@ -167,4 +167,6 @@ Section-11 :
 11. Favourite coffee store by Id API
 12. Favourite coffee store by Id api wrap
 13. Invoke favourite coffee store by id api
-14. 
+14. application demo
+15. airtable final demo
+16. refactor and clean-up

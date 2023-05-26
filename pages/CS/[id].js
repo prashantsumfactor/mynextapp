@@ -11,10 +11,8 @@ import { isEmpty, fetcher } from '../../utils/index';
 import useSWR from "swr";
 
 export async function getStaticProps(staticProps) {
-
     const params = staticProps.params;
     const coffeeStores = await fetchCoffeeStore();
-    console.log("param_id", params);
 
     const findCoffeeStoreByID = coffeeStores.find(coffeeStore => {
         return coffeeStore.id.toString() === params.id;
@@ -49,11 +47,8 @@ const Coffee = (initialProps) => {
         return <div>Loading...</div>;
     }
     const pageId = router.query.id;
-
     const [getCoffeeStore, setCoffeeStores] = useState(initialProps.coffeeStore)
-
     const { state: { coffeeStores } } = useContext(StoreContext);
-
     const handleCreateCoffeeStore = async (coffeeData) => {
         try {
             const { id, name, address, neighbourhood, voting, imgUrl } = coffeeData;
@@ -72,7 +67,6 @@ const Coffee = (initialProps) => {
                 }),
             });
             const dbCoffeeStore = response.json();
-            console.log({ dbCoffeeStore });
         } catch (err) {
             console.error(err);
         }
@@ -96,13 +90,12 @@ const Coffee = (initialProps) => {
     }, [pageId, initialProps, initialProps.coffeeStore]);
 
     const { name, address, neighbourhood, imgUrl } = getCoffeeStore;
-    const [votingCount, setVotingCount] = useState(1);
+    const [votingCount, setVotingCount] = useState(0);
 
     const { data, error } = useSWR(`/api/getCoffeeStoreById?id=${pageId}`, fetcher);
 
     useEffect(() => {
         if (data && data.length > 0) {
-            console.log("Data from SWR", data);
             setVotingCount(data[0].voting)
             setCoffeeStores(data[0]);
         }
@@ -112,7 +105,6 @@ const Coffee = (initialProps) => {
     }
 
     const handleUpvoteButton = async () => {
-        console.log("update vote");
         try {
             const response = await fetch("/api/favouriteCoffeeStoreById", {
                 method: "PUT",
@@ -124,7 +116,6 @@ const Coffee = (initialProps) => {
                 }),
             });
             const updateCoffeeStore =await response.json();
-            console.log({ updateCoffeeStore });
             if(updateCoffeeStore && updateCoffeeStore.length>0){
                 let count = votingCount + 1;
                 setVotingCount(count);
@@ -133,7 +124,6 @@ const Coffee = (initialProps) => {
             console.error('Error upvoting the coffee store', err);
         }
     };
-
 
     return <div className={styles.layout}>
         <Head>

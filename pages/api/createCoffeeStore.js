@@ -43,12 +43,4 @@ const createCoffeeStore = async (req, res) => {
     }
 }
 
-
-
 export default createCoffeeStore;
-
-// s-239, 243, 255
-// an-247, 247,, done
-// r-245, 249, 259
-// a-247, 252, 
-// v-244, 247

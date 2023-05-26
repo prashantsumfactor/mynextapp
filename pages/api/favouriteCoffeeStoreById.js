@@ -5,7 +5,6 @@ const favouriteCoffeeStoreById = async (req, res) => {
     if (req.method === "PUT") {
         // Define request body param
         const { pageId } = req.body;
-        console.log(req.body)
         try {
             // Get record from table and filter by ID
             if (pageId) {
