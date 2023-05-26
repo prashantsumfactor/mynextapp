@@ -159,4 +159,12 @@ Section-11 :
 3. coffee store by ID api
 4. coffee store by id validate
 5. refector coffee store by id api
-6. what is SWR - State while revalidate
+6. what is SWR - Stale while revalidate
+7. SWR doc fetch api
+8. Use swr in coffee store page
+9. API Design: Favourite Coffee Store By Id API
+10. API Docs: Favourite Coffee Store By Id API
+11. Favourite coffee store by Id API
+12. Favourite coffee store by Id api wrap
+13. Invoke favourite coffee store by id api
+14. 
