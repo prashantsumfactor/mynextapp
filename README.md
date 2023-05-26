@@ -159,4 +159,4 @@ Section-11 :
 3. coffee store by ID api
 4. coffee store by id validate
 5. refector coffee store by id api
-6. 
+6. what is SWR - State while revalidate

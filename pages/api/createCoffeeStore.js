@@ -1,4 +1,4 @@
-import { table, getMinifiedRecords } from "../../lib/airtable";
+import { table, getMinifiedRecords, findRecordByFilter } from "../../lib/airtable";
 
 const createCoffeeStore = async (req, res) => {
     // Check if request method is POST
@@ -8,16 +8,11 @@ const createCoffeeStore = async (req, res) => {
         try {
             // Get record from table and filter by ID
             if (id) {
-                const findCoffeeStoreRecord = await table.select({
-                    filterByFormula: `id="${id}"`
-                }).firstPage()
-                // Check if record exit or not
-                if (findCoffeeStoreRecord.length !== 0) {
-                    const miniRecord = getMinifiedRecords(findCoffeeStoreRecord)
+                const getRecord = await findRecordByFilter(id);
+                if (getRecord.length !== 0) {
                     res.status(200);
-                    res.json(miniRecord);
-                }
-                // Created new record in table 
+                    res.json(getRecord);
+                }  // Created new record in table 
                 else {
                     // Check body's param is valid or not
                     if (name) {
@@ -36,7 +31,7 @@ const createCoffeeStore = async (req, res) => {
                 }
             } else {
                 res.status(400);
-                res.json({ message: "ID is missing", id : `id=${id}` });
+                res.json({ message: "ID is missing", id: `id=${id}` });
             }
         } catch (err) {
             res.status(500);
