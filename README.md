@@ -170,3 +170,10 @@ Section-11 :
 14. application demo
 15. airtable final demo
 16. refactor and clean-up
+
+Section-12 :
+
+1. what is deployment
+2. note : running next build
+3. running app in next build
+4. 
