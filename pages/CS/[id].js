@@ -43,9 +43,7 @@ export async function getStaticPaths() {
 
 const Coffee = (initialProps) => {
     const router = useRouter();
-    if (router.isFallback) {
-        return <div>Loading...</div>;
-    }
+   
     const pageId = router.query.id;
     const [getCoffeeStore, setCoffeeStores] = useState(initialProps.coffeeStore)
     const { state: { coffeeStores } } = useContext(StoreContext);
@@ -87,9 +85,9 @@ const Coffee = (initialProps) => {
             // SSG
             handleCreateCoffeeStore(initialProps.coffeeStore);
         }
-    }, [pageId, initialProps, initialProps.coffeeStore]);
+    }, [pageId, initialProps, initialProps.coffeeStore, coffeeStores]);
 
-    const { name, address, neighbourhood, imgUrl } = getCoffeeStore;
+    const { name, address, neighbourhood, imgUrl } = getCoffeeStore || {};
     const [votingCount, setVotingCount] = useState(0);
 
     const { data, error } = useSWR(`/api/getCoffeeStoreById?id=${pageId}`, fetcher);
@@ -102,6 +100,10 @@ const Coffee = (initialProps) => {
     }, [data])
     if (error) {
         return <div>Something went wrong retrieving coffee store page</div>;
+    }
+
+    if (router.isFallback) {
+        return <div>Loading...</div>;
     }
 
     const handleUpvoteButton = async () => {
