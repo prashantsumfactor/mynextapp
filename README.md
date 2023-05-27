@@ -181,4 +181,12 @@ Section-12 :
 6. create git repo and puch code
 7. Coffee stores appear from different location on Vercel
 8. deployment to vercel
-9. 
+9. vercel dashboard walkthrough
+10. vercel production build files
+11. what is netlify
+12. netlify deployment
+13. netlify plugin update
+14. netlify deployment configuration changes
+15. lighthouse performance
+16. lighthouse score
+17. lighthouse improvement
